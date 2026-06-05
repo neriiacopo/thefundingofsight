@@ -1,0 +1,148 @@
+.banner {
+    width: 100%;
+    height: 5vh;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    background: var(--tooltip-bg);
+    border: 0.5px solid var(--tooltip-border);
+    font-family: var(--font-mono);
+
+    z-index: 100;
+}
+
+.dropdown {
+    position: relative;
+    height: 100%;
+    border-right: 0.5px solid var(--tooltip-border);
+}
+
+.dropdown:last-child {
+    border-right: none;
+}
+
+.trigger {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    border: none;
+    background: transparent;
+    color: var(--tooltip-text);
+    font: inherit;
+    cursor: pointer;
+}
+
+.trigger::after {
+    content: "⌄";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: var(--tooltip-muted);
+    font-size: 14px;
+}
+
+.label {
+    font-size: 10px;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--tooltip-muted);
+}
+
+.value {
+    margin-top: 4px;
+    font-size: 14px;
+    color: var(--tooltip-text);
+}
+
+.menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+
+    background: var(--tooltip-bg);
+    border: 0.5px solid var(--tooltip-border);
+    border-top: none;
+
+    z-index: 200;
+}
+
+.option {
+    width: 100%;
+    height: 5vh;
+
+    padding: 0 12px;
+
+    display: flex;
+    align-items: center;
+
+    border: none;
+    border-bottom: 0.5px solid var(--tooltip-border);
+    background: var(--tooltip-bg);
+
+    color: var(--tooltip-muted);
+    font: inherit;
+    font-size: 14px;
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.selected {
+    background: var(--tooltip-border);
+    color: var(--tooltip-text);
+}
+
+.option:last-child {
+    border-bottom: none;
+}
+
+.option:hover {
+    background: var(--tooltip-border);
+    color: var(--tooltip-text);
+}
+
+.disabled {
+    /* background: rgba(255, 255, 255, 0.18); */
+    background: var(--tooltip-bg-light);
+}
+
+.disabled .trigger {
+    cursor: default;
+    color: var(--tooltip-muted);
+}
+
+.disabled .trigger::after {
+    content: "";
+}
+
+.disabled .value {
+    color: var(--tooltip-muted);
+}
+
+@media (max-width: 640px) {
+    .banner {
+        height: auto;
+        grid-template-columns: 1fr;
+    }
+
+    .dropdown {
+        height: 5vh;
+        border-right: none;
+        border-bottom: 0.5px solid var(--tooltip-border);
+    }
+}

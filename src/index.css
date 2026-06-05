@@ -1,0 +1,41 @@
+/* ─── Reset ─────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ─── Variables ─────────────────────────────────────────────────────────── */
+:root {
+    --bg: #0d0d0f;
+    /* --bg: #eeeeeek; */
+    --cell-base: #111116;
+    /* --cell-border: rgba(255, 255, 255, 0.06); */
+    --cell-border: rgba(20, 20, 20, 0.8);
+
+    --label-primary: rgba(255, 255, 255, 0.9);
+    --label-secondary: rgba(255, 255, 255, 0.55);
+    --label-sub: rgba(255, 255, 255, 0.5);
+
+    --tooltip-bg: #1a1a1f;
+    --tooltip-bg-light: rgba(36, 36, 41, 1);
+    --tooltip-border: rgba(255, 255, 255, 0.12);
+    --tooltip-text: rgba(255, 255, 255, 0.88);
+    --tooltip-muted: rgba(255, 255, 255, 0.45);
+
+    /* --font-mono: "DM Mono", "Fira Mono", "Courier New", monospace; */
+    --font-mono: "Satoshi";
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--bg);
+    font-family: var(--font-mono);
+}

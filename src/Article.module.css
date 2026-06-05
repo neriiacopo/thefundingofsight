@@ -1,0 +1,65 @@
+.article {
+    position: fixed;
+    background: var(--tooltip-bg);
+    border: 0.5px solid var(--tooltip-border);
+    border-radius: 6px;
+    padding: 10px 14px;
+    pointer-events: auto;
+    cursor: pointer;
+    z-index: 100;
+    min-width: 160px;
+    max-width: 25vw;
+    font-family: var(--font-mono);
+    font-size: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.parent {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--tooltip-muted);
+    margin-bottom: 4px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--tooltip-text);
+    margin-bottom: 6px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 11px;
+    color: var(--tooltip-muted);
+    margin-top: 2px;
+}
+
+.more {
+    display: flex;
+    justify-content: right;
+    gap: 20px;
+    font-size: 11px;
+    color: var(--tooltip-text);
+    margin-top: 2px;
+    text-decoration: underline;
+}
+
+.row b {
+    color: var(--tooltip-text);
+    font-weight: 400;
+}
